@@ -2,7 +2,7 @@ import htcondor
 import os
 import sys
 from pprint import pprint
-from mcmtest.lib.helpers import copy_proxy
+from mcmtest.lib.helpers import copy_proxy, mcmtest_path
 from mcmtest.lib.condor import condor_submit
 
 pjoin = os.path.join
@@ -64,7 +64,7 @@ class Submitter:
 			self.submission_settings['arguments'] = args
 
 			# Set output log files
-			outdir=os.path.expanduser('~/mcm_testarea/output/')
+			outdir = mcmtest_path('mcmtest/output')
 			if not os.path.exists(outdir):
 				os.makedirs(outdir)
 			output_file = pjoin(outdir, 'out_{0}.txt'.format(prepid))
@@ -78,7 +78,7 @@ class Submitter:
 			sub = htcondor.Submit(self.submission_settings)
 
 			# Write the job file to submit
-			jobfiledir = os.path.expanduser('~/mcm_testarea/job_files')
+			jobfiledir = mcmtest_path('mcmtest/job_files') 
 			if not os.path.exists(jobfiledir):
 				os.makedirs(jobfiledir)
 
