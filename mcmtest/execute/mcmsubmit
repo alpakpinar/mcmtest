@@ -1,7 +1,38 @@
 #!/usr/bin/env python
 
+import argparse
 from mcmtest.submitter import Submitter
+from mcmtest.lib.helpers import mcmtest_path 
 
-prepid_list = ['HIG-RunIISummer15wmLHEGS-03434']
-sub = Submitter(prepid_list=prepid_list)
-sub.submit()
+def parse_commandlineargs():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('request', help='Name of the requests to be tested.')
+	args = parser.parse_args()
+	return args
+
+def get_prepid_list(args):
+	'''According to the request argument given to mcmsubmit,
+	   extract the prepid_list for the request.'''
+	request_name = args.request
+	# Extract the file in which the prepIDs are stored
+	reqfile = mcmtest_path(f'requests/{request_name}/requestlist.txt')
+	
+	prepid_list = []
+
+	with open(reqfile, 'r') as f:
+		lines = f.read().splitlines()
+		for line in lines:
+			if line.startswith('#') or line == '':
+				continue
+			prepid_list.append(line)
+		
+	return prepid_list
+
+def main():
+	args = parse_commandlineargs()
+	prepid_list = get_prepid_list(args)
+	sub = Submitter(prepid_list=prepid_list)
+	sub.submit()
+
+if __name__ == '__main__':
+	main()
