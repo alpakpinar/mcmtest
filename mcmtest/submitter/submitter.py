@@ -75,9 +75,9 @@ class Submitter:
             outdir = mcmtest_path('output')
             if not os.path.exists(outdir):
                 os.makedirs(outdir)
-            output_file = pjoin(outdir, 'out_{0}.txt'.format(prepid))
-            log_file = pjoin(outdir, 'log_{0}.txt'.format(prepid))
-            err_file = pjoin(outdir, 'err_{0}.txt'.format(prepid))
+            output_file = pjoin(outdir, f'out_{prepid}.txt')
+            log_file = pjoin(outdir, f'log_{prepid}.txt')
+            err_file = pjoin(outdir, f'err_{prepid}.txt')
 
             self.submission_settings['output'] = output_file
             self.submission_settings['log'] = log_file
@@ -90,13 +90,13 @@ class Submitter:
             if not os.path.exists(jobfiledir):
                 os.makedirs(jobfiledir)
 
-            jobfile = pjoin(jobfiledir, 'job_{0}.jdl'.format(prepid))
+            jobfile = pjoin(jobfiledir, f'job_{prepid}.jdl')
             with open(jobfile, 'w+') as f:
                 f.write(str(sub))
                 f.write('\nqueue 1\n')
 
             # Submit the job
             jobid = condor_submit(jobfile)
-            print('Submitted job: {0}, Job ID: {1}'.format(prepid, jobid))
+            print(f'Submitted job: {prepid}, Job ID: {jobid}')
 
 
