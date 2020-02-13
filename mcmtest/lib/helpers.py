@@ -12,7 +12,7 @@ def voms_proxy_path():
 	if proc.returncode != 0 :
 		raise RuntimeError("Could not run voms-proxy-info command.")
 	
-	pathline = [x for x in stdout.split('\n') if x.startswith('path')]
+	pathline = [x for x in stdout.decode('utf-8').split('\n') if x.startswith('path')]
 	proxy_path = re.sub('.* /', '/', pathline[0])
 	return proxy_path
 
@@ -22,7 +22,7 @@ def copy_proxy():
 	proxy_path = voms_proxy_path()
 	proxy_dir = os.path.expanduser('~/mcm_testarea/.voms/')
 	if not os.path.exists(proxy_dir):
-		os.make_dirs(proxydir)
+		os.makedirs(proxy_dir)
 	shutil.copy2(proxy_path, proxy_dir)
 
 	new_proxy_path = os.path.join(proxy_dir, os.path.basename(proxy_path))

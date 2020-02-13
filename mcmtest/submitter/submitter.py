@@ -5,6 +5,8 @@ from pprint import pprint
 from mcmtest.lib.helpers import copy_proxy
 from mcmtest.lib.condor import condor_submit
 
+pjoin = os.path.join
+
 class Submitter:
 	'''
 	HTCondor submitter for a list of McMPrepIDs.
@@ -30,12 +32,14 @@ class Submitter:
 		   prepid_list : The list of McM PrepIDs that are being tested.
 		'''
 		self.prepid_list = prepid_list
-		
+	
+		executable = '/afs/cern.ch/user/a/aakpinar/mcmtest/mcmtest/execute/run_test.sh'
+	
 		# Initialize submission settings 
 		# for HTCondor
 		self.submission_settings = {
 			'universe' : 'vanilla',
-			'executable' : '/execute/run_test.sh', 
+			'executable' : executable, 
 			'should_transfer_files' : 'YES',
 			'transfer_output_files' : '""',
 			# Run jobs only on SLC6 
@@ -87,10 +91,4 @@ class Submitter:
 			jobid = condor_submit(jobfile)
 			print('Submitted job: {0}, Job ID: {1}'.format(prepid, jobid))
 
-
-# Test
-prepid_list = ['HIG-RunIISummer15wmLHEGS-03434']
-sub = Submitter(prepid_list=prepid_list)
-pprint(sub.submission_settings)
-sub.submit()
 
