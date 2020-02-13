@@ -2,6 +2,12 @@ import subprocess
 import re
 import shutil
 import os
+import mcmtest
+
+pjoin = os.path.join
+
+def mcmtest_path(path_to_file):
+	return pjoin(mcmtest.__path__[0], path_to_file)
 
 def voms_proxy_path():
 	'''Get the path where VOMS proxy file is stored.'''
