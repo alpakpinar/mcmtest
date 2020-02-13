@@ -2,7 +2,7 @@
 
 import sys
 print(sys.path)
-from mcm_testarea.submitter import Submitter
+from mcmtest.submitter import Submitter
 
 prepid_list = ['HIG-RunIISummer15wmLHEGS-03434']
 sub = Submitter(prepid_list=prepid_list)

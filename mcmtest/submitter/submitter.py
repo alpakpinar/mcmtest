@@ -2,8 +2,8 @@ import htcondor
 import os
 import sys
 from pprint import pprint
-from mcm_test.lib.helpers import copy_proxy
-from mcm_test.lib.condor import condor_submit
+from mcmtest.lib.helpers import copy_proxy
+from mcmtest.lib.condor import condor_submit
 
 class Submitter:
 	'''
