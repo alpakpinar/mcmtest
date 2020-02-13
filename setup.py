@@ -10,7 +10,8 @@ setup(
 	author_email='aakpinar@bu.edu',
 	description='Package for local McM test submissions using HTCondor.',
 	packages=find_packages(),	
-	install_requires=requirements
+	install_requires=requirements,
+	scripts=['mcmtest/execute/mcmsubmit']
 )
 
 
