@@ -2,3 +2,4 @@
 .voms/
 *.egg-info
 __pycache__/
+output/
