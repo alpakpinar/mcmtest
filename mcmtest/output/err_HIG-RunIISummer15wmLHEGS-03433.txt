@@ -1,0 +1,345 @@
+--2020-02-12 17:09:20--  https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_test/HIG-RunIISummer15wmLHEGS-03433
+Resolving cms-pdmv.cern.ch... 188.184.135.218
+Connecting to cms-pdmv.cern.ch|188.184.135.218|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3313 (3.2K) [text/plain]
+Saving to: “test_com_HIG-RunIISummer15wmLHEGS-03433”
+
+     0K ...                                                   100% 61.5M=0s
+
+2020-02-12 17:09:21 (61.5 MB/s) - “test_com_HIG-RunIISummer15wmLHEGS-03433” saved [3313/3313]
+
+WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
+WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
+12-Feb-2020 17:12:21 CET  Initiating request to open LHE file cmsgrid_final.lhe
+12-Feb-2020 17:12:21 CET  Successfully opened LHE file cmsgrid_final.lhe
+%MSG-w LogicError:  Pythia8HadronizerFilter:generator@beginRun  12-Feb-2020 17:12:21 CET Run: 1
+::getByLabel: An attempt was made to read a Run product before endRun() was called.
+The product is of type 'LHERunInfoProduct'.
+The specified ModuleLabel was 'externalLHEProducer'.
+The specified productInstanceName was ''.
+
+%MSG
+Begin processing the 1st record. Run 1, Event 1, LumiSection 1 at 12-Feb-2020 17:13:33.782 CET
+Begin processing the 2nd record. Run 1, Event 2, LumiSection 1 at 12-Feb-2020 17:14:27.900 CET
+Begin processing the 3rd record. Run 1, Event 3, LumiSection 1 at 12-Feb-2020 17:14:58.686 CET
+Begin processing the 4th record. Run 1, Event 4, LumiSection 1 at 12-Feb-2020 17:14:58.823 CET
+Begin processing the 5th record. Run 1, Event 5, LumiSection 1 at 12-Feb-2020 17:14:59.421 CET
+Begin processing the 6th record. Run 1, Event 6, LumiSection 1 at 12-Feb-2020 17:15:00.192 CET
+Begin processing the 7th record. Run 1, Event 7, LumiSection 1 at 12-Feb-2020 17:15:03.176 CET
+Begin processing the 8th record. Run 1, Event 8, LumiSection 1 at 12-Feb-2020 17:15:39.788 CET
+Begin processing the 9th record. Run 1, Event 9, LumiSection 1 at 12-Feb-2020 17:15:39.961 CET
+Begin processing the 10th record. Run 1, Event 10, LumiSection 1 at 12-Feb-2020 17:15:41.267 CET
+Begin processing the 11th record. Run 1, Event 11, LumiSection 1 at 12-Feb-2020 17:15:42.594 CET
+Begin processing the 12th record. Run 1, Event 12, LumiSection 1 at 12-Feb-2020 17:16:05.313 CET
+Begin processing the 13th record. Run 1, Event 13, LumiSection 1 at 12-Feb-2020 17:16:05.485 CET
+Begin processing the 14th record. Run 1, Event 14, LumiSection 1 at 12-Feb-2020 17:16:57.501 CET
+Begin processing the 15th record. Run 1, Event 15, LumiSection 1 at 12-Feb-2020 17:17:42.439 CET
+Begin processing the 16th record. Run 1, Event 16, LumiSection 1 at 12-Feb-2020 17:17:44.577 CET
+Begin processing the 17th record. Run 1, Event 17, LumiSection 1 at 12-Feb-2020 17:17:44.829 CET
+Begin processing the 18th record. Run 1, Event 18, LumiSection 1 at 12-Feb-2020 17:18:04.814 CET
+Begin processing the 19th record. Run 1, Event 19, LumiSection 1 at 12-Feb-2020 17:18:14.256 CET
+Begin processing the 20th record. Run 1, Event 20, LumiSection 1 at 12-Feb-2020 17:19:06.653 CET
+Begin processing the 21st record. Run 1, Event 21, LumiSection 1 at 12-Feb-2020 17:19:07.830 CET
+Begin processing the 22nd record. Run 1, Event 22, LumiSection 1 at 12-Feb-2020 17:19:37.024 CET
+Begin processing the 23rd record. Run 1, Event 23, LumiSection 1 at 12-Feb-2020 17:19:37.681 CET
+Begin processing the 24th record. Run 1, Event 24, LumiSection 1 at 12-Feb-2020 17:20:04.061 CET
+Begin processing the 25th record. Run 1, Event 25, LumiSection 1 at 12-Feb-2020 17:20:46.043 CET
+Begin processing the 26th record. Run 1, Event 26, LumiSection 1 at 12-Feb-2020 17:21:15.740 CET
+Begin processing the 27th record. Run 1, Event 27, LumiSection 1 at 12-Feb-2020 17:21:29.392 CET
+Begin processing the 28th record. Run 1, Event 28, LumiSection 1 at 12-Feb-2020 17:21:33.345 CET
+Begin processing the 29th record. Run 1, Event 29, LumiSection 1 at 12-Feb-2020 17:21:33.403 CET
+Begin processing the 30th record. Run 1, Event 30, LumiSection 1 at 12-Feb-2020 17:22:04.139 CET
+Begin processing the 31st record. Run 1, Event 31, LumiSection 1 at 12-Feb-2020 17:23:23.887 CET
+Begin processing the 32nd record. Run 1, Event 32, LumiSection 1 at 12-Feb-2020 17:23:53.300 CET
+Begin processing the 33rd record. Run 1, Event 33, LumiSection 1 at 12-Feb-2020 17:24:22.627 CET
+Begin processing the 34th record. Run 1, Event 34, LumiSection 1 at 12-Feb-2020 17:24:40.354 CET
+Begin processing the 35th record. Run 1, Event 35, LumiSection 1 at 12-Feb-2020 17:24:40.604 CET
+Begin processing the 36th record. Run 1, Event 36, LumiSection 1 at 12-Feb-2020 17:25:18.441 CET
+Begin processing the 37th record. Run 1, Event 37, LumiSection 1 at 12-Feb-2020 17:25:18.662 CET
+Begin processing the 38th record. Run 1, Event 38, LumiSection 1 at 12-Feb-2020 17:26:07.425 CET
+Begin processing the 39th record. Run 1, Event 39, LumiSection 1 at 12-Feb-2020 17:26:10.962 CET
+Begin processing the 40th record. Run 1, Event 40, LumiSection 1 at 12-Feb-2020 17:26:11.042 CET
+Begin processing the 41st record. Run 1, Event 41, LumiSection 1 at 12-Feb-2020 17:27:06.079 CET
+Begin processing the 42nd record. Run 1, Event 42, LumiSection 1 at 12-Feb-2020 17:27:06.646 CET
+Begin processing the 43rd record. Run 1, Event 43, LumiSection 1 at 12-Feb-2020 17:27:07.910 CET
+Begin processing the 44th record. Run 1, Event 44, LumiSection 1 at 12-Feb-2020 17:27:08.096 CET
+Begin processing the 45th record. Run 1, Event 45, LumiSection 1 at 12-Feb-2020 17:27:39.686 CET
+Begin processing the 46th record. Run 1, Event 46, LumiSection 1 at 12-Feb-2020 17:27:39.771 CET
+Begin processing the 47th record. Run 1, Event 47, LumiSection 1 at 12-Feb-2020 17:28:30.141 CET
+Begin processing the 48th record. Run 1, Event 48, LumiSection 1 at 12-Feb-2020 17:28:30.427 CET
+Begin processing the 49th record. Run 1, Event 49, LumiSection 1 at 12-Feb-2020 17:29:21.654 CET
+Begin processing the 50th record. Run 1, Event 50, LumiSection 1 at 12-Feb-2020 17:29:24.495 CET
+Begin processing the 51st record. Run 1, Event 51, LumiSection 1 at 12-Feb-2020 17:29:26.649 CET
+Begin processing the 52nd record. Run 1, Event 52, LumiSection 1 at 12-Feb-2020 17:29:27.701 CET
+Begin processing the 53rd record. Run 1, Event 53, LumiSection 1 at 12-Feb-2020 17:30:16.432 CET
+Begin processing the 54th record. Run 1, Event 54, LumiSection 1 at 12-Feb-2020 17:30:48.623 CET
+Begin processing the 55th record. Run 1, Event 55, LumiSection 1 at 12-Feb-2020 17:31:39.911 CET
+Begin processing the 56th record. Run 1, Event 56, LumiSection 1 at 12-Feb-2020 17:31:40.202 CET
+Begin processing the 57th record. Run 1, Event 57, LumiSection 1 at 12-Feb-2020 17:31:54.300 CET
+Begin processing the 58th record. Run 1, Event 58, LumiSection 1 at 12-Feb-2020 17:32:29.844 CET
+Begin processing the 59th record. Run 1, Event 59, LumiSection 1 at 12-Feb-2020 17:32:31.125 CET
+Begin processing the 60th record. Run 1, Event 60, LumiSection 1 at 12-Feb-2020 17:32:57.609 CET
+Begin processing the 61st record. Run 1, Event 61, LumiSection 1 at 12-Feb-2020 17:33:34.834 CET
+Begin processing the 62nd record. Run 1, Event 62, LumiSection 1 at 12-Feb-2020 17:33:36.166 CET
+Begin processing the 63rd record. Run 1, Event 63, LumiSection 1 at 12-Feb-2020 17:34:44.943 CET
+Begin processing the 64th record. Run 1, Event 64, LumiSection 1 at 12-Feb-2020 17:35:13.432 CET
+Begin processing the 65th record. Run 1, Event 65, LumiSection 1 at 12-Feb-2020 17:35:14.613 CET
+Begin processing the 66th record. Run 1, Event 66, LumiSection 1 at 12-Feb-2020 17:35:48.993 CET
+Begin processing the 67th record. Run 1, Event 67, LumiSection 1 at 12-Feb-2020 17:35:49.470 CET
+Begin processing the 68th record. Run 1, Event 68, LumiSection 1 at 12-Feb-2020 17:35:49.513 CET
+Begin processing the 69th record. Run 1, Event 69, LumiSection 1 at 12-Feb-2020 17:36:40.954 CET
+Begin processing the 70th record. Run 1, Event 70, LumiSection 1 at 12-Feb-2020 17:37:25.602 CET
+Begin processing the 71st record. Run 1, Event 71, LumiSection 1 at 12-Feb-2020 17:37:50.282 CET
+Begin processing the 72nd record. Run 1, Event 72, LumiSection 1 at 12-Feb-2020 17:37:53.213 CET
+Begin processing the 73rd record. Run 1, Event 73, LumiSection 1 at 12-Feb-2020 17:38:40.720 CET
+Begin processing the 74th record. Run 1, Event 74, LumiSection 1 at 12-Feb-2020 17:38:41.319 CET
+Begin processing the 75th record. Run 1, Event 75, LumiSection 1 at 12-Feb-2020 17:38:43.862 CET
+Begin processing the 76th record. Run 1, Event 76, LumiSection 1 at 12-Feb-2020 17:38:44.233 CET
+Begin processing the 77th record. Run 1, Event 77, LumiSection 1 at 12-Feb-2020 17:38:45.565 CET
+Begin processing the 78th record. Run 1, Event 78, LumiSection 1 at 12-Feb-2020 17:38:59.398 CET
+Begin processing the 79th record. Run 1, Event 79, LumiSection 1 at 12-Feb-2020 17:39:12.238 CET
+Begin processing the 80th record. Run 1, Event 80, LumiSection 1 at 12-Feb-2020 17:39:35.864 CET
+Begin processing the 81st record. Run 1, Event 81, LumiSection 1 at 12-Feb-2020 17:40:00.533 CET
+Begin processing the 82nd record. Run 1, Event 82, LumiSection 1 at 12-Feb-2020 17:40:01.054 CET
+Begin processing the 83rd record. Run 1, Event 83, LumiSection 1 at 12-Feb-2020 17:40:03.907 CET
+Begin processing the 84th record. Run 1, Event 84, LumiSection 1 at 12-Feb-2020 17:40:47.704 CET
+Begin processing the 85th record. Run 1, Event 85, LumiSection 1 at 12-Feb-2020 17:41:24.309 CET
+Begin processing the 86th record. Run 1, Event 86, LumiSection 1 at 12-Feb-2020 17:41:27.189 CET
+Begin processing the 87th record. Run 1, Event 87, LumiSection 1 at 12-Feb-2020 17:41:45.973 CET
+Begin processing the 88th record. Run 1, Event 88, LumiSection 1 at 12-Feb-2020 17:41:46.162 CET
+Begin processing the 89th record. Run 1, Event 89, LumiSection 1 at 12-Feb-2020 17:42:21.222 CET
+Begin processing the 90th record. Run 1, Event 90, LumiSection 1 at 12-Feb-2020 17:42:35.964 CET
+Begin processing the 91st record. Run 1, Event 91, LumiSection 1 at 12-Feb-2020 17:43:00.140 CET
+Begin processing the 92nd record. Run 1, Event 92, LumiSection 1 at 12-Feb-2020 17:43:01.144 CET
+Begin processing the 93rd record. Run 1, Event 93, LumiSection 1 at 12-Feb-2020 17:43:51.801 CET
+Begin processing the 94th record. Run 1, Event 94, LumiSection 1 at 12-Feb-2020 17:44:01.045 CET
+Begin processing the 95th record. Run 1, Event 95, LumiSection 1 at 12-Feb-2020 17:44:23.915 CET
+Begin processing the 96th record. Run 1, Event 96, LumiSection 1 at 12-Feb-2020 17:44:24.088 CET
+Begin processing the 97th record. Run 1, Event 97, LumiSection 1 at 12-Feb-2020 17:45:02.951 CET
+Begin processing the 98th record. Run 1, Event 98, LumiSection 1 at 12-Feb-2020 17:45:42.217 CET
+Begin processing the 99th record. Run 1, Event 99, LumiSection 1 at 12-Feb-2020 17:46:25.061 CET
+Begin processing the 100th record. Run 1, Event 100, LumiSection 1 at 12-Feb-2020 17:47:04.141 CET
+Begin processing the 101st record. Run 1, Event 101, LumiSection 1 at 12-Feb-2020 17:47:50.488 CET
+Begin processing the 102nd record. Run 1, Event 102, LumiSection 1 at 12-Feb-2020 17:48:03.078 CET
+Begin processing the 103rd record. Run 1, Event 103, LumiSection 1 at 12-Feb-2020 17:49:02.894 CET
+Begin processing the 104th record. Run 1, Event 104, LumiSection 1 at 12-Feb-2020 17:49:04.579 CET
+Begin processing the 105th record. Run 1, Event 105, LumiSection 1 at 12-Feb-2020 17:49:46.328 CET
+Begin processing the 106th record. Run 1, Event 106, LumiSection 1 at 12-Feb-2020 17:50:15.396 CET
+Begin processing the 107th record. Run 1, Event 107, LumiSection 1 at 12-Feb-2020 17:51:03.792 CET
+Begin processing the 108th record. Run 1, Event 108, LumiSection 1 at 12-Feb-2020 17:51:17.566 CET
+Begin processing the 109th record. Run 1, Event 109, LumiSection 1 at 12-Feb-2020 17:52:08.767 CET
+Begin processing the 110th record. Run 1, Event 110, LumiSection 1 at 12-Feb-2020 17:52:34.343 CET
+Begin processing the 111th record. Run 1, Event 111, LumiSection 1 at 12-Feb-2020 17:52:35.618 CET
+Begin processing the 112th record. Run 1, Event 112, LumiSection 1 at 12-Feb-2020 17:52:37.456 CET
+Begin processing the 113th record. Run 1, Event 113, LumiSection 1 at 12-Feb-2020 17:52:37.757 CET
+Begin processing the 114th record. Run 1, Event 114, LumiSection 1 at 12-Feb-2020 17:52:37.815 CET
+Begin processing the 115th record. Run 1, Event 115, LumiSection 1 at 12-Feb-2020 17:52:37.920 CET
+Begin processing the 116th record. Run 1, Event 116, LumiSection 1 at 12-Feb-2020 17:53:13.441 CET
+Begin processing the 117th record. Run 1, Event 117, LumiSection 1 at 12-Feb-2020 17:53:15.159 CET
+Begin processing the 118th record. Run 1, Event 118, LumiSection 1 at 12-Feb-2020 17:53:39.811 CET
+Begin processing the 119th record. Run 1, Event 119, LumiSection 1 at 12-Feb-2020 17:53:40.710 CET
+Begin processing the 120th record. Run 1, Event 120, LumiSection 1 at 12-Feb-2020 17:54:30.860 CET
+Begin processing the 121st record. Run 1, Event 121, LumiSection 1 at 12-Feb-2020 17:54:54.053 CET
+Begin processing the 122nd record. Run 1, Event 122, LumiSection 1 at 12-Feb-2020 17:55:41.631 CET
+Begin processing the 123rd record. Run 1, Event 123, LumiSection 1 at 12-Feb-2020 17:55:41.951 CET
+Begin processing the 124th record. Run 1, Event 124, LumiSection 1 at 12-Feb-2020 17:56:24.328 CET
+Begin processing the 125th record. Run 1, Event 125, LumiSection 1 at 12-Feb-2020 17:56:47.816 CET
+Begin processing the 126th record. Run 1, Event 126, LumiSection 1 at 12-Feb-2020 17:57:30.012 CET
+Begin processing the 127th record. Run 1, Event 127, LumiSection 1 at 12-Feb-2020 17:57:45.490 CET
+Begin processing the 128th record. Run 1, Event 128, LumiSection 1 at 12-Feb-2020 17:58:03.702 CET
+Begin processing the 129th record. Run 1, Event 129, LumiSection 1 at 12-Feb-2020 17:58:17.013 CET
+Begin processing the 130th record. Run 1, Event 130, LumiSection 1 at 12-Feb-2020 17:58:43.078 CET
+Begin processing the 131st record. Run 1, Event 131, LumiSection 1 at 12-Feb-2020 17:58:43.234 CET
+Begin processing the 132nd record. Run 1, Event 132, LumiSection 1 at 12-Feb-2020 17:59:10.816 CET
+Begin processing the 133rd record. Run 1, Event 133, LumiSection 1 at 12-Feb-2020 17:59:41.471 CET
+Begin processing the 134th record. Run 1, Event 134, LumiSection 1 at 12-Feb-2020 18:00:04.386 CET
+Begin processing the 135th record. Run 1, Event 135, LumiSection 1 at 12-Feb-2020 18:00:34.269 CET
+Begin processing the 136th record. Run 1, Event 136, LumiSection 1 at 12-Feb-2020 18:00:36.899 CET
+Begin processing the 137th record. Run 1, Event 137, LumiSection 1 at 12-Feb-2020 18:01:03.540 CET
+Begin processing the 138th record. Run 1, Event 138, LumiSection 1 at 12-Feb-2020 18:01:04.332 CET
+Begin processing the 139th record. Run 1, Event 139, LumiSection 1 at 12-Feb-2020 18:01:04.699 CET
+Begin processing the 140th record. Run 1, Event 140, LumiSection 1 at 12-Feb-2020 18:01:07.155 CET
+Begin processing the 141st record. Run 1, Event 141, LumiSection 1 at 12-Feb-2020 18:01:38.007 CET
+Begin processing the 142nd record. Run 1, Event 142, LumiSection 1 at 12-Feb-2020 18:01:40.593 CET
+Begin processing the 143rd record. Run 1, Event 143, LumiSection 1 at 12-Feb-2020 18:01:41.408 CET
+Begin processing the 144th record. Run 1, Event 144, LumiSection 1 at 12-Feb-2020 18:02:09.629 CET
+Begin processing the 145th record. Run 1, Event 145, LumiSection 1 at 12-Feb-2020 18:02:10.171 CET
+Begin processing the 146th record. Run 1, Event 146, LumiSection 1 at 12-Feb-2020 18:02:29.635 CET
+Begin processing the 147th record. Run 1, Event 147, LumiSection 1 at 12-Feb-2020 18:03:08.381 CET
+Begin processing the 148th record. Run 1, Event 148, LumiSection 1 at 12-Feb-2020 18:03:22.985 CET
+Begin processing the 149th record. Run 1, Event 149, LumiSection 1 at 12-Feb-2020 18:04:09.112 CET
+Begin processing the 150th record. Run 1, Event 150, LumiSection 1 at 12-Feb-2020 18:04:38.085 CET
+Begin processing the 151st record. Run 1, Event 151, LumiSection 1 at 12-Feb-2020 18:05:10.234 CET
+Begin processing the 152nd record. Run 1, Event 152, LumiSection 1 at 12-Feb-2020 18:05:51.065 CET
+Begin processing the 153rd record. Run 1, Event 153, LumiSection 1 at 12-Feb-2020 18:05:51.673 CET
+Begin processing the 154th record. Run 1, Event 154, LumiSection 1 at 12-Feb-2020 18:05:53.066 CET
+Begin processing the 155th record. Run 1, Event 155, LumiSection 1 at 12-Feb-2020 18:06:36.904 CET
+Begin processing the 156th record. Run 1, Event 156, LumiSection 1 at 12-Feb-2020 18:06:37.061 CET
+Begin processing the 157th record. Run 1, Event 157, LumiSection 1 at 12-Feb-2020 18:06:50.524 CET
+Begin processing the 158th record. Run 1, Event 158, LumiSection 1 at 12-Feb-2020 18:06:50.581 CET
+Begin processing the 159th record. Run 1, Event 159, LumiSection 1 at 12-Feb-2020 18:07:31.084 CET
+Begin processing the 160th record. Run 1, Event 160, LumiSection 1 at 12-Feb-2020 18:07:59.912 CET
+Begin processing the 161st record. Run 1, Event 161, LumiSection 1 at 12-Feb-2020 18:08:00.794 CET
+Begin processing the 162nd record. Run 1, Event 162, LumiSection 1 at 12-Feb-2020 18:08:23.817 CET
+Begin processing the 163rd record. Run 1, Event 163, LumiSection 1 at 12-Feb-2020 18:08:24.958 CET
+Begin processing the 164th record. Run 1, Event 164, LumiSection 1 at 12-Feb-2020 18:09:19.505 CET
+Begin processing the 165th record. Run 1, Event 165, LumiSection 1 at 12-Feb-2020 18:09:19.927 CET
+Begin processing the 166th record. Run 1, Event 166, LumiSection 1 at 12-Feb-2020 18:09:21.925 CET
+Begin processing the 167th record. Run 1, Event 167, LumiSection 1 at 12-Feb-2020 18:09:22.279 CET
+Begin processing the 168th record. Run 1, Event 168, LumiSection 1 at 12-Feb-2020 18:09:40.797 CET
+Begin processing the 169th record. Run 1, Event 169, LumiSection 1 at 12-Feb-2020 18:09:40.985 CET
+Begin processing the 170th record. Run 1, Event 170, LumiSection 1 at 12-Feb-2020 18:10:02.661 CET
+Begin processing the 171st record. Run 1, Event 171, LumiSection 1 at 12-Feb-2020 18:10:03.525 CET
+Begin processing the 172nd record. Run 1, Event 172, LumiSection 1 at 12-Feb-2020 18:10:39.465 CET
+Begin processing the 173rd record. Run 1, Event 173, LumiSection 1 at 12-Feb-2020 18:11:03.592 CET
+Begin processing the 174th record. Run 1, Event 174, LumiSection 1 at 12-Feb-2020 18:11:04.780 CET
+Begin processing the 175th record. Run 1, Event 175, LumiSection 1 at 12-Feb-2020 18:11:50.137 CET
+Begin processing the 176th record. Run 1, Event 176, LumiSection 1 at 12-Feb-2020 18:11:54.359 CET
+Begin processing the 177th record. Run 1, Event 177, LumiSection 1 at 12-Feb-2020 18:12:23.228 CET
+Begin processing the 178th record. Run 1, Event 178, LumiSection 1 at 12-Feb-2020 18:12:23.849 CET
+Begin processing the 179th record. Run 1, Event 179, LumiSection 1 at 12-Feb-2020 18:12:49.837 CET
+Begin processing the 180th record. Run 1, Event 180, LumiSection 1 at 12-Feb-2020 18:12:50.368 CET
+Begin processing the 181st record. Run 1, Event 181, LumiSection 1 at 12-Feb-2020 18:13:09.030 CET
+Begin processing the 182nd record. Run 1, Event 182, LumiSection 1 at 12-Feb-2020 18:13:09.076 CET
+Begin processing the 183rd record. Run 1, Event 183, LumiSection 1 at 12-Feb-2020 18:13:09.140 CET
+Begin processing the 184th record. Run 1, Event 184, LumiSection 1 at 12-Feb-2020 18:13:09.486 CET
+Begin processing the 185th record. Run 1, Event 185, LumiSection 1 at 12-Feb-2020 18:13:19.306 CET
+Begin processing the 186th record. Run 1, Event 186, LumiSection 1 at 12-Feb-2020 18:13:42.947 CET
+Begin processing the 187th record. Run 1, Event 187, LumiSection 1 at 12-Feb-2020 18:14:04.232 CET
+Begin processing the 188th record. Run 1, Event 188, LumiSection 1 at 12-Feb-2020 18:14:25.194 CET
+Begin processing the 189th record. Run 1, Event 189, LumiSection 1 at 12-Feb-2020 18:14:26.110 CET
+Begin processing the 190th record. Run 1, Event 190, LumiSection 1 at 12-Feb-2020 18:14:55.573 CET
+Begin processing the 191st record. Run 1, Event 191, LumiSection 1 at 12-Feb-2020 18:15:27.777 CET
+Begin processing the 192nd record. Run 1, Event 192, LumiSection 1 at 12-Feb-2020 18:15:28.467 CET
+Begin processing the 193rd record. Run 1, Event 193, LumiSection 1 at 12-Feb-2020 18:15:29.777 CET
+Begin processing the 194th record. Run 1, Event 194, LumiSection 1 at 12-Feb-2020 18:15:31.482 CET
+Begin processing the 195th record. Run 1, Event 195, LumiSection 1 at 12-Feb-2020 18:16:12.470 CET
+Begin processing the 196th record. Run 1, Event 196, LumiSection 1 at 12-Feb-2020 18:17:01.863 CET
+Begin processing the 197th record. Run 1, Event 197, LumiSection 1 at 12-Feb-2020 18:17:31.962 CET
+Begin processing the 198th record. Run 1, Event 198, LumiSection 1 at 12-Feb-2020 18:17:48.489 CET
+Begin processing the 199th record. Run 1, Event 199, LumiSection 1 at 12-Feb-2020 18:17:48.670 CET
+Begin processing the 200th record. Run 1, Event 200, LumiSection 1 at 12-Feb-2020 18:17:49.060 CET
+Begin processing the 201st record. Run 1, Event 201, LumiSection 1 at 12-Feb-2020 18:18:50.756 CET
+Begin processing the 202nd record. Run 1, Event 202, LumiSection 1 at 12-Feb-2020 18:20:04.809 CET
+Begin processing the 203rd record. Run 1, Event 203, LumiSection 1 at 12-Feb-2020 18:21:00.659 CET
+Begin processing the 204th record. Run 1, Event 204, LumiSection 1 at 12-Feb-2020 18:21:13.144 CET
+Begin processing the 205th record. Run 1, Event 205, LumiSection 1 at 12-Feb-2020 18:21:13.367 CET
+Begin processing the 206th record. Run 1, Event 206, LumiSection 1 at 12-Feb-2020 18:21:39.690 CET
+Begin processing the 207th record. Run 1, Event 207, LumiSection 1 at 12-Feb-2020 18:21:39.856 CET
+Begin processing the 208th record. Run 1, Event 208, LumiSection 1 at 12-Feb-2020 18:21:42.280 CET
+Begin processing the 209th record. Run 1, Event 209, LumiSection 1 at 12-Feb-2020 18:21:42.386 CET
+Begin processing the 210th record. Run 1, Event 210, LumiSection 1 at 12-Feb-2020 18:21:43.358 CET
+Begin processing the 211th record. Run 1, Event 211, LumiSection 1 at 12-Feb-2020 18:22:17.629 CET
+Begin processing the 212th record. Run 1, Event 212, LumiSection 1 at 12-Feb-2020 18:22:17.753 CET
+Begin processing the 213th record. Run 1, Event 213, LumiSection 1 at 12-Feb-2020 18:22:59.418 CET
+Begin processing the 214th record. Run 1, Event 214, LumiSection 1 at 12-Feb-2020 18:23:39.711 CET
+Begin processing the 215th record. Run 1, Event 215, LumiSection 1 at 12-Feb-2020 18:23:42.400 CET
+Begin processing the 216th record. Run 1, Event 216, LumiSection 1 at 12-Feb-2020 18:23:43.372 CET
+Begin processing the 217th record. Run 1, Event 217, LumiSection 1 at 12-Feb-2020 18:23:57.974 CET
+Begin processing the 218th record. Run 1, Event 218, LumiSection 1 at 12-Feb-2020 18:24:27.395 CET
+Begin processing the 219th record. Run 1, Event 219, LumiSection 1 at 12-Feb-2020 18:25:09.504 CET
+Begin processing the 220th record. Run 1, Event 220, LumiSection 1 at 12-Feb-2020 18:25:31.251 CET
+Begin processing the 221st record. Run 1, Event 221, LumiSection 1 at 12-Feb-2020 18:25:46.593 CET
+Begin processing the 222nd record. Run 1, Event 222, LumiSection 1 at 12-Feb-2020 18:26:34.275 CET
+Begin processing the 223rd record. Run 1, Event 223, LumiSection 1 at 12-Feb-2020 18:26:57.759 CET
+Begin processing the 224th record. Run 1, Event 224, LumiSection 1 at 12-Feb-2020 18:27:31.199 CET
+Begin processing the 225th record. Run 1, Event 225, LumiSection 1 at 12-Feb-2020 18:28:04.662 CET
+Begin processing the 226th record. Run 1, Event 226, LumiSection 1 at 12-Feb-2020 18:28:28.232 CET
+Begin processing the 227th record. Run 1, Event 227, LumiSection 1 at 12-Feb-2020 18:29:15.817 CET
+Begin processing the 228th record. Run 1, Event 228, LumiSection 1 at 12-Feb-2020 18:29:16.062 CET
+Begin processing the 229th record. Run 1, Event 229, LumiSection 1 at 12-Feb-2020 18:29:31.363 CET
+Begin processing the 230th record. Run 1, Event 230, LumiSection 1 at 12-Feb-2020 18:29:32.457 CET
+Begin processing the 231st record. Run 1, Event 231, LumiSection 1 at 12-Feb-2020 18:29:34.733 CET
+Begin processing the 232nd record. Run 1, Event 232, LumiSection 1 at 12-Feb-2020 18:30:08.196 CET
+Begin processing the 233rd record. Run 1, Event 233, LumiSection 1 at 12-Feb-2020 18:30:10.201 CET
+Begin processing the 234th record. Run 1, Event 234, LumiSection 1 at 12-Feb-2020 18:30:11.878 CET
+Begin processing the 235th record. Run 1, Event 235, LumiSection 1 at 12-Feb-2020 18:30:12.410 CET
+Begin processing the 236th record. Run 1, Event 236, LumiSection 1 at 12-Feb-2020 18:31:08.698 CET
+Begin processing the 237th record. Run 1, Event 237, LumiSection 1 at 12-Feb-2020 18:31:40.076 CET
+Begin processing the 238th record. Run 1, Event 238, LumiSection 1 at 12-Feb-2020 18:32:21.748 CET
+Begin processing the 239th record. Run 1, Event 239, LumiSection 1 at 12-Feb-2020 18:32:56.440 CET
+Begin processing the 240th record. Run 1, Event 240, LumiSection 1 at 12-Feb-2020 18:32:56.920 CET
+Begin processing the 241st record. Run 1, Event 241, LumiSection 1 at 12-Feb-2020 18:33:05.620 CET
+Begin processing the 242nd record. Run 1, Event 242, LumiSection 1 at 12-Feb-2020 18:33:34.417 CET
+Begin processing the 243rd record. Run 1, Event 243, LumiSection 1 at 12-Feb-2020 18:33:53.237 CET
+Begin processing the 244th record. Run 1, Event 244, LumiSection 1 at 12-Feb-2020 18:33:56.810 CET
+Begin processing the 245th record. Run 1, Event 245, LumiSection 1 at 12-Feb-2020 18:33:58.154 CET
+Begin processing the 246th record. Run 1, Event 246, LumiSection 1 at 12-Feb-2020 18:34:48.432 CET
+Begin processing the 247th record. Run 1, Event 247, LumiSection 1 at 12-Feb-2020 18:35:05.701 CET
+Begin processing the 248th record. Run 1, Event 248, LumiSection 1 at 12-Feb-2020 18:35:47.674 CET
+Begin processing the 249th record. Run 1, Event 249, LumiSection 1 at 12-Feb-2020 18:35:49.522 CET
+Begin processing the 250th record. Run 1, Event 250, LumiSection 1 at 12-Feb-2020 18:36:06.791 CET
+Begin processing the 251st record. Run 1, Event 251, LumiSection 1 at 12-Feb-2020 18:36:42.186 CET
+Begin processing the 252nd record. Run 1, Event 252, LumiSection 1 at 12-Feb-2020 18:37:08.964 CET
+Begin processing the 253rd record. Run 1, Event 253, LumiSection 1 at 12-Feb-2020 18:38:06.400 CET
+Begin processing the 254th record. Run 1, Event 254, LumiSection 1 at 12-Feb-2020 18:38:24.332 CET
+Begin processing the 255th record. Run 1, Event 255, LumiSection 1 at 12-Feb-2020 18:39:06.133 CET
+Begin processing the 256th record. Run 1, Event 256, LumiSection 1 at 12-Feb-2020 18:39:08.755 CET
+Begin processing the 257th record. Run 1, Event 257, LumiSection 1 at 12-Feb-2020 18:39:52.979 CET
+Begin processing the 258th record. Run 1, Event 258, LumiSection 1 at 12-Feb-2020 18:40:19.529 CET
+Begin processing the 259th record. Run 1, Event 259, LumiSection 1 at 12-Feb-2020 18:40:38.587 CET
+Begin processing the 260th record. Run 1, Event 260, LumiSection 1 at 12-Feb-2020 18:40:38.674 CET
+Begin processing the 261st record. Run 1, Event 261, LumiSection 1 at 12-Feb-2020 18:40:40.911 CET
+Begin processing the 262nd record. Run 1, Event 262, LumiSection 1 at 12-Feb-2020 18:42:02.849 CET
+Begin processing the 263rd record. Run 1, Event 263, LumiSection 1 at 12-Feb-2020 18:42:03.786 CET
+Begin processing the 264th record. Run 1, Event 264, LumiSection 1 at 12-Feb-2020 18:42:20.366 CET
+Begin processing the 265th record. Run 1, Event 265, LumiSection 1 at 12-Feb-2020 18:42:20.545 CET
+12-Feb-2020 18:42:21 CET  Closed LHE file cmsgrid_final.lhe
+
+------------------------------------
+GenXsecAnalyzer:
+------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+Overall cross-section summary 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Process		xsec_before [pb]		passed	nposw	nnegw	tried	nposw	nnegw 	xsec_match [pb]			accepted [%]	 event_eff [%]
+0		2.537e-16 +/- 0.000e+00		81	81	0	166	166	0	1.238e-16 +/- 9.842e-18		48.8 +/- 3.9	48.8 +/- 3.9
+1		1.448e-16 +/- 0.000e+00		76	76	0	99	99	0	1.112e-16 +/- 6.147e-18		76.8 +/- 4.2	76.8 +/- 4.2
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+Total		3.985e-16 +/- 0.000e+00		157	157	0	265	265	0	2.350e-16 +/- 1.160e-17		59.0 +/- 2.9	59.2 +/- 3.0
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Before matching: total cross section = 3.985e-16 +- 0.000e+00 pb
+After matching: total cross section = 2.350e-16 +- 1.160e-17 pb
+Filter efficiency (taking into account weights)= (156.98) / (156.98) = 1.000e+00 +- 0.000e+00
+Filter efficiency (event-level)= (157) / (157) = 1.000e+00 +- 0.000e+00
+After filter: final cross section = 2.350e-16 +- 1.160e-17 pb
+TimeReport> Time report complete in 5504.63 seconds
+ Time Summary: 
+ - Min event:   0.0429041
+ - Max event:   81.9353
+ - Avg event:   20.7722
+ - Total job:   5504.63
+ CPU Summary: 
+ - Min event:   0.042994
+ - Max event:   81.2756
+ - Avg event:   19.96
+ - Total job:   5373.75
+ - Total event: 5289.41
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 GenXSecAnalyzer      -w GenXSecAnalyzer:                      13       13
+    2 LogicError           -w Pythia8Hadronize                       1        1
+    3 TimeReport           -e AfterModEndJob                         1        1
+    4 fileAction           -s ExternalLHEProdu                       2        2
+    5 fileAction           -s ExternalLHEProdu                       1        1
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 GenXSecAnalyzer      PostEndRun       PostEndRun       PostEndRun
+    2 LogicError           Run: 1                            
+    3 TimeReport           PostEndRun                        
+    4 fileAction           Run: 1           Run: 1           
+    5 fileAction           End Run: 1                        
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning                14                  14
+Error                   1                   1
+System                  3                   3

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: mcmtest
+Version: 0.0.1
+Summary: Package for local McM test submissions using HTCondor.
+Home-page: UNKNOWN
+Author: Alp Akpinar
+Author-email: aakpinar@bu.edu
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
