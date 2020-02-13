@@ -7,6 +7,7 @@ from mcmtest.lib.helpers import mcmtest_path
 def parse_commandlineargs():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('request', help='Name of the requests to be tested.')
+	parser.add_argument('--nodeos', help='The desired OS in working nodes. Specify "slc6" or "centos7" (defualt).')
 	args = parser.parse_args()
 	return args
 
@@ -31,7 +32,9 @@ def get_prepid_list(args):
 def main():
 	args = parse_commandlineargs()
 	prepid_list = get_prepid_list(args)
-	sub = Submitter(prepid_list=prepid_list)
+
+	node_os = args.nodeos
+	sub = Submitter(prepid_list=prepid_list, node_os=node_os)
 	sub.submit()
 
 if __name__ == '__main__':
