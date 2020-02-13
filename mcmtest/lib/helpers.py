@@ -26,7 +26,7 @@ def copy_proxy():
 	'''Copy the proxy file to .voms/ directory in mcm_testarea.
 	   Returns the new path to the proxy file.'''
 	proxy_path = voms_proxy_path()
-	proxy_dir = os.path.expanduser('~/mcm_testarea/.voms/')
+	proxy_dir = mcmtest_path('.voms') 
 	if not os.path.exists(proxy_dir):
 		os.makedirs(proxy_dir)
 	shutil.copy2(proxy_path, proxy_dir)
