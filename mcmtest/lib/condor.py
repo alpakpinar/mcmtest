@@ -14,14 +14,6 @@ def condor_submit(jobfile):
 	jobid = stdout.split()[-1].decode('utf-8').replace('.','')
 	return jobid
 
-def read_logs(directories):
-	'''Read the log files in a given list of directories.'''
-	logs = []
-	for directory in directories:
-		for path, _, files in os.walk(directory):
-			logs.extend([os.path.join(path, x) for x in files if x.startswith("log_")])
-	return logs
-
 class CondorJob:
 	'''Wrapper for a HTCondor job.'''
 	def __init__(self, log):
