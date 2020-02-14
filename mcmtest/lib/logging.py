@@ -26,7 +26,7 @@ class LogManager:
             self.jobs = pickle.load( open(self.pkl, 'rb') )
 
         else:
-            self.jobs = self.init_jobs()
+            self.init_jobs()
 
     @property
     def directory(self):
@@ -48,12 +48,12 @@ class LogManager:
         self._jobs = sorted(jobs, key=lambda x: x.name)
 
     @property
-    def autoresbub(self):
+    def autoresub(self):
         return self._autoresub
 
-    @autoresbub.setter
-    def autoresbub(self, autoresbub):
-        self._autoresbub = autoresbub
+    @autoresub.setter
+    def autoresub(self, autoresub):
+        self._autoresub = autoresub
 
     def init_jobs(self):
         '''Initiate the jobs by looking at each log file 
