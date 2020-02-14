@@ -17,7 +17,7 @@ from mcmtest.lib.logging import LogManager
 
 pjoin = os.path.join
 
-logger = logging.getlogger('mcmlog')
+logger = logging.getLogger('mcmlog')
 format = '%(levelname)s (%(name)s) [%(asctime)s]: %(message)s'
 date = '%F %H:%M:%S'
 logging.basicConfig( level='DEBUG', format=format, datefmt=date, filename='monitor_log.txt', filemode='w')
