@@ -127,7 +127,7 @@ def main(stdscr):
                         logger.info(f'Automatic resubmission set to {lm.autoresub}.')
                     elif cmd == 'h':
                         settings['hide_finished'] = not settings['hide_finished']
-                        logger.info(f'Will {"not" if settings["hide_finished"] else ""} hide finished jobs.')
+                        logger.info(f'Will {"" if settings["hide_finished"] else "not"} hide finished jobs.')
                         break
                     elif  cmd == 'KEY_HOME':
                         pad_pos = 0
