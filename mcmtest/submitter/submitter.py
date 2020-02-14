@@ -63,6 +63,12 @@ class Submitter:
         # Transfer the VOMS proxy file to HTCondor
         self.submission_settings['transfer_input_files'] = proxy_path
 
+    def _get_campaign_name(self):
+        '''Get the campaign name from given prepIDs.'''
+        prepid = self.prepid_list[0]
+        campaign_name = '-'.join(prepid.split('-')[:-1])
+        return campaign_name
+
     def submit(self):    
         '''Submit the test jobs for all prepIDs to HTCondor.'''
         for prepid in self.prepid_list:
@@ -71,8 +77,10 @@ class Submitter:
             args = ' '.join(arg_list)        
             self.submission_settings['arguments'] = args
 
+            campaign_name = self._get_campaign_name()
+
             # Set output log files
-            outdir = mcmtest_path('output')
+            outdir = mcmtest_path(f'output/{campaign_name}')
             if not os.path.exists(outdir):
                 os.makedirs(outdir)
             output_file = pjoin(outdir, f'out_{prepid}.txt')
@@ -86,7 +94,7 @@ class Submitter:
             sub = htcondor.Submit(self.submission_settings)
 
             # Write the job file to submit
-            jobfiledir = mcmtest_path('job_files') 
+            jobfiledir = mcmtest_path(f'job_files/{campaign_name}') 
             if not os.path.exists(jobfiledir):
                 os.makedirs(jobfiledir)
 
