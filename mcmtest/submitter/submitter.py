@@ -45,8 +45,8 @@ class Submitter:
             'executable' : executable, 
             'should_transfer_files' : 'YES',
             'transfer_output_files' : '""',
-            # Maximum run-time: 2 hours
-            '+MaxRuntime'  : f'{60*60*2}' 
+            # Maximum run-time: 4 hours
+            '+MaxRuntime'  : f'{60*60*4}' 
         }
         # If SLC6 OS is specified, add it to submission settings
         if node_os == 'slc6':
