@@ -46,7 +46,7 @@ class Submitter:
             'should_transfer_files' : 'YES',
             'transfer_output_files' : '""',
             # Maximum run-time: 2 hours
-            '+JobFlavour'  : 'longlunch' 
+            '+MaxRuntime'  : f'{60*60*2}' 
         }
         # If SLC6 OS is specified, add it to submission settings
         if node_os == 'slc6':
