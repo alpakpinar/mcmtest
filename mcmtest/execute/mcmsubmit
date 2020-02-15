@@ -4,13 +4,18 @@ import os
 import argparse
 from mcmtest.submitter import Submitter
 from mcmtest.lib.helpers import mcmtest_path 
+from pprint import pprint
+from functools import partial
+
+pjoin = os.path.join
 
 def parse_commandlineargs():
     parser = argparse.ArgumentParser()
     parser.add_argument('request', help='Name of the requests to be tested.')
     parser.add_argument('--nodeos', help='The desired OS in working nodes. Specify "slc6" or "centos7" (defualt).')
-    parser.add_argument('--year', help='Year specification for sample request. If --allyears option is used, tests for all available requests from all years will be submitted.', type=int)
+    parser.add_argument('-y', '--year', help='Year specification for sample request. If --allyears option is used, tests for all available requests from all years will be submitted.', type=int)
     parser.add_argument('--allyears', help='Submit requests for all years.', action='store_true')
+    parser.add_argument('--dry', help='Dry run. No actual job submissions will be made.', action='store_true')
     args = parser.parse_args()
     return args
 
@@ -21,7 +26,7 @@ def get_prepid_list(args):
 
     # A year must be specified, otherwise --allyears option must be used
     # to submit tests for requests from all available years
-    if not args.year or args.allyears:
+    if not (args.year or args.allyears):
         raise ValueError('Specify production year with --year or use --allyears to submit all tests.')
 
     def extract_fromfiles(filelist):
@@ -41,12 +46,12 @@ def get_prepid_list(args):
     if args.year:
         if args.year not in [2016, 2017, 2018]:
             raise ValueError('Invalid argument for --year. Use 2016, 2017 or 2018.')
-        reqfile = mcmtest_path(f'requests/{request_name}/requestlist{year}.txt')
+        reqfile = mcmtest_path(f'requests/{request_name}/requestlist{args.year}.txt')
         prepid_list = extract_fromfiles([reqfile])
     
     else:
         reqdir = mcmtest_path(f'requests/{request_name}')
-        files = os.listdir(reqdir)
+        files = [pjoin(reqdir, f) for f in os.listdir(reqdir)]
         prepid_list = extract_fromfiles(files)
 
     return prepid_list
@@ -57,7 +62,15 @@ def main():
 
     node_os = args.nodeos
     sub = Submitter(prepid_list=prepid_list, node_os=node_os)
-    sub.submit()
+    
+    # Submit the jobs if dry run is not requested
+    if not args.dry:
+        sub.submit()
+    else:
+        print('Dry run: End of the job, no submissions will be made.')
+        print('PrepID list:')
+        pprint(prepid_list)
+
 
 if __name__ == '__main__':
     main()
