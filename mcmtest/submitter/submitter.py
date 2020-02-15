@@ -24,23 +24,25 @@ class Submitter:
     Submit all jobs to HTCondor:
     >>> sub.submit()
     '''
-    def __init__(self, prepid_list, node_os='centos7', multiple_campaigns=False, dryrun=False):
+    def __init__(self, prepid_list, request_name, node_os='centos7', multiple_campaigns=False, dryrun=False):
         '''Initializer function for the Submitter class.
            Initializes the submission settings for HTCondor.
 
            ================
            PARAMETERS
            ================
-           prepid_list : The list of McM PrepIDs that are being tested.
-           node_os     : The desired operating system in the work nodes.
+           prepid_list  : The list of McM PrepIDs that are being tested.
+           request_name : The name of the request that is being tested, as named in "requests/" directory.
+           node_os      : The desired operating system in the work nodes.
                          The default OS is CentOS 7 (defualt OS HTCondor submits to), 
                          but Submitter also accepts Scientific Linux 6 (node_os=slc6).
            multiple_campaigns : Set True if multiple campaigns are to be submitted at one go.
                                 Otherwise, set False (default behavior). 
-           dryrun      : Dry run. No submissions will be made, information about prepID-campaign
+           dryrun       : Dry run. No submissions will be made, information about prepID-campaign
                          mapping will be printed to the screen.
         '''
         self.prepid_list = prepid_list
+        self.request_name = request_name
         self.multiple_campaigns = multiple_campaigns
         self.dryrun = dryrun    
 
@@ -106,11 +108,11 @@ class Submitter:
 
         for campaign_name, prepids in prepid_campaign_map.items():       
             # Set output directory for each campaign
-            outdir = mcmtest_path(f'output/{campaign_name}')
+            outdir = mcmtest_path(f'output/{self.request_name}/{campaign_name}')
             if not os.path.exists(outdir):
                 os.makedirs(outdir)
             
-            jobfiledir = mcmtest_path(f'job_files/{campaign_name}') 
+            jobfiledir = mcmtest_path(f'job_files/{self.request_name}/{campaign_name}') 
             if not os.path.exists(jobfiledir):
                 os.makedirs(jobfiledir)
             

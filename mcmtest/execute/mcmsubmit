@@ -66,16 +66,22 @@ def get_prepid_list(args):
         files = [pjoin(reqdir, f) for f in os.listdir(reqdir)]
         prepid_list = extract_fromfiles(files)
 
-    return prepid_list
+    return request_name, prepid_list
 
 def main():
     args = parse_commandlineargs()
-    prepid_list = get_prepid_list(args)
+    request_name, prepid_list = get_prepid_list(args)
 
     node_os = args.nodeos
-    multiple_campaigns = True if len(args.year) > 1 else False
 
-    sub = Submitter(prepid_list=prepid_list, 
+    if (args.year and len(args.year) > 1) or args.allyears:
+        multiple_campaigns = True
+    
+    else:
+        multiple_campaigns = False
+
+    sub = Submitter(prepid_list=prepid_list,
+                    request_name=request_name, 
                     node_os=node_os, 
                     dryrun=args.dry,
                     multiple_campaigns=multiple_campaigns)
