@@ -1,41 +1,63 @@
 #!/usr/bin/env python
 
+import os
 import argparse
 from mcmtest.submitter import Submitter
 from mcmtest.lib.helpers import mcmtest_path 
 
 def parse_commandlineargs():
-	parser = argparse.ArgumentParser()
-	parser.add_argument('request', help='Name of the requests to be tested.')
-	parser.add_argument('--nodeos', help='The desired OS in working nodes. Specify "slc6" or "centos7" (defualt).')
-	args = parser.parse_args()
-	return args
+    parser = argparse.ArgumentParser()
+    parser.add_argument('request', help='Name of the requests to be tested.')
+    parser.add_argument('--nodeos', help='The desired OS in working nodes. Specify "slc6" or "centos7" (defualt).')
+    parser.add_argument('--year', help='Year specification for sample request. If --allyears option is used, tests for all available requests from all years will be submitted.', type=int)
+    parser.add_argument('--allyears', help='Submit requests for all years.', action='store_true')
+    args = parser.parse_args()
+    return args
 
 def get_prepid_list(args):
-	'''According to the request argument given to mcmsubmit,
-	   extract the prepid_list for the request.'''
-	request_name = args.request
-	# Extract the file in which the prepIDs are stored
-	reqfile = mcmtest_path(f'requests/{request_name}/requestlist.txt')
-	
-	prepid_list = []
+    '''According to the request argument given to mcmsubmit,
+       extract the prepid_list for the request.'''
+    request_name = args.request
 
-	with open(reqfile, 'r') as f:
-		lines = f.read().splitlines()
-		for line in lines:
-			if line.startswith('#') or line == '':
-				continue
-			prepid_list.append(line)
-		
-	return prepid_list
+    # A year must be specified, otherwise --allyears option must be used
+    # to submit tests for requests from all available years
+    if not args.year or args.allyears:
+        raise ValueError('Specify production year with --year or use --allyears to submit all tests.')
+
+    def extract_fromfiles(filelist):
+        '''Get prepid list from the given set of files.'''
+        _prepid_list = []
+        for _file in filelist:
+            with open(_file, 'r') as f:
+                lines = f.read().splitlines()
+                for line in lines:
+                    if line.startswith('#') or line == '':
+                        continue
+                    _prepid_list.append(line)
+        
+        return _prepid_list
+
+    # Extract the file in which the prepIDs are stored
+    if args.year:
+        if args.year not in [2016, 2017, 2018]:
+            raise ValueError('Invalid argument for --year. Use 2016, 2017 or 2018.')
+        reqfile = mcmtest_path(f'requests/{request_name}/requestlist{year}.txt')
+        prepid_list = extract_fromfiles([reqfile])
+    
+    else:
+        reqdir = mcmtest_path(f'requests/{request_name}')
+        files = os.listdir(reqdir)
+        prepid_list = extract_fromfiles(files)
+
+    return prepid_list
 
 def main():
-	args = parse_commandlineargs()
-	prepid_list = get_prepid_list(args)
+    args = parse_commandlineargs()
+    prepid_list = get_prepid_list(args)
 
-	node_os = args.nodeos
-	sub = Submitter(prepid_list=prepid_list, node_os=node_os)
-	sub.submit()
+    node_os = args.nodeos
+    sub = Submitter(prepid_list=prepid_list, node_os=node_os)
+    sub.submit()
 
 if __name__ == '__main__':
-	main()
+    main()
