@@ -13,7 +13,7 @@ def parse_commandlineargs():
     parser = argparse.ArgumentParser()
     parser.add_argument('request', help='Name of the requests to be tested.')
     parser.add_argument('--nodeos', help='The desired OS in working nodes. Specify "slc6" or "centos7" (defualt).')
-    parser.add_argument('-y', '--year', help='Year specification for sample request. If --allyears option is used, tests for all available requests from all years will be submitted.', type=int)
+    parser.add_argument('-y', '--year', help='Year specification for sample request: 2016, 2017 or 2018.', type=int, nargs='*')
     parser.add_argument('--allyears', help='Submit requests for all years.', action='store_true')
     parser.add_argument('--dry', help='Dry run. No actual job submissions will be made.', action='store_true')
     args = parser.parse_args()
@@ -44,11 +44,24 @@ def get_prepid_list(args):
 
     # Extract the file in which the prepIDs are stored
     if args.year:
-        if args.year not in [2016, 2017, 2018]:
-            raise ValueError('Invalid argument for --year. Use 2016, 2017 or 2018.')
-        reqfile = mcmtest_path(f'requests/{request_name}/requestlist{args.year}.txt')
-        prepid_list = extract_fromfiles([reqfile])
-    
+        # Handle the case if a single year is specified
+        if len(args.year) == 1:
+            if args.year not in [2016, 2017, 2018]:
+                raise ValueError('Invalid argument for --year. Use 2016, 2017 or 2018.')
+            reqfile = mcmtest_path(f'requests/{request_name}/requestlist{args.year}.txt')
+            prepid_list = extract_fromfiles([reqfile])
+        
+        # Handle the case if more than one year is specified
+        else:
+            for year in args.year:
+                if year not in [2016, 2017, 2018]:
+                    raise ValueError('Invalid argument for --year. Use 2016, 2017 or 2018.')
+                        
+            reqfiles = []
+            for year in args.year:
+                reqfile = mcmtest_path(f'requests/{request_name}/requestlist{year}.txt')
+                reqfiles.append(reqfile)
+            prepid_list = extract_fromfiles(reqfiles)
     else:
         reqdir = mcmtest_path(f'requests/{request_name}')
         files = [pjoin(reqdir, f) for f in os.listdir(reqdir)]
