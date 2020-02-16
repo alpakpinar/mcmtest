@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+
+################################
+# Using the logs of the submitted test jobs,
+# determine x-sec, filter/matching eff,
+# size/event and time/event values.
+# Dump the values into the csv file for
+# each campaign.
+###############################
+
+import os
+import argparse
+from mcmtest.loganalyzer import LogAnalyzer
+from mcmtest.lib.helpers import mcmtest_path
+
+pjoin = os.path.join
+
+def parse_commandline():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('request', help='Name of the request being considered.')
+    args = parser.parse_args()
+    return args
+
+def dump_info(request_name):
+    '''Main script:
+       - Find the log files containing stderr and stdout for a given request.
+       - Analyze the logs and save information on an output csv file.
+    '''
+    root_path = mcmtest_path(f'output/{request_name}')
+    campaign_dirs = [pjoin(root_path, campaign_dir) for campaign_dir in os.listdir(root_path) if os.path.isdir(pjoin(root_path, campaign_dir) )]
+    # For each campaign in the request,
+    # dump the values into csv files
+    for campaign_dir in campaign_dirs:
+        campaign_name = os.path.basename(campaign_dir)
+        print(f'Working on campaign: {campaign_name}')
+        analyzer = LogAnalyzer(campaign_dir)
+        csvdir = mcmtest_path(f'output/{request_name}/{campaign_name}/csv')
+        if not os.path.exists(csvdir):
+            os.makedirs(csvdir)
+        csvfile = pjoin(csvdir, 'values.csv')
+        analyzer.dump_to_csv(csvfile)
+        
+def main():
+    args = parse_commandline()
+    request_name = args.request
+
+    dump_info(request_name)
+
+if __name__ == '__main__':
+    main()
