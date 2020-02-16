@@ -13,7 +13,8 @@ setup(
     install_requires=requirements,
     scripts=[
              'mcmtest/execute/mcmsubmit',
-             'mcmtest/execute/mcmlog'
+             'mcmtest/execute/mcmlog',
+             'mcmtest/execute/mcmanalyze'
             ]
 )
 
