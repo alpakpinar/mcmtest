@@ -7,3 +7,4 @@ job_files/
 build/
 dist/
 monitor_log.txt
+*.pyc
