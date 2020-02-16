@@ -3,7 +3,6 @@
 import os
 import csv
 import warnings
-from pprint import pprint
 from mcmtest.lib.helpers import mcmtest_path
 
 pjoin = os.path.join
