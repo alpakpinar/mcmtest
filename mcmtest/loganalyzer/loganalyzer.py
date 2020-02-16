@@ -174,7 +174,7 @@ class LogAnalyzer:
             fieldnames = ['prepid', 'xsec', 'filtereff', 'matcheff', 'time_event', 'size_event']
             writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
             writer.writeheader()
-            for prepid, data in self.container.items():
+            for data in self.container.values():
                 writer.writerow(data)        
 
         print(f'CSV file saved: {csvfile}')
