@@ -179,7 +179,4 @@ class LogAnalyzer:
 
         print(f'CSV file saved: {csvfile}')
 
-# Testing
-ana = LogAnalyzer('/afs/cern.ch/user/a/aakpinar/mcmtest/mcmtest/output/HToAA/HIG-RunIIFall17wmLHEGS')
-ana.dump_to_csv('test.csv')
         
