@@ -32,12 +32,14 @@ def dump_info(request_name):
     # dump the values into csv files
     for campaign_dir in campaign_dirs:
         campaign_name = os.path.basename(campaign_dir)
+        print('*'*40)
         print(f'Working on campaign: {campaign_name}')
+        print('*'*40)
         analyzer = LogAnalyzer(campaign_dir)
         csvdir = mcmtest_path(f'output/{request_name}/{campaign_name}/csv')
         if not os.path.exists(csvdir):
             os.makedirs(csvdir)
-        csvfile = pjoin(csvdir, 'values.csv')
+        csvfile = pjoin(csvdir, 'mcmvalues.csv')
         analyzer.dump_to_csv(csvfile)
         
 def main():
