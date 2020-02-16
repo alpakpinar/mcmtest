@@ -2,7 +2,6 @@
 
 import os
 import csv
-import warnings
 from mcmtest.lib.helpers import mcmtest_path
 
 pjoin = os.path.join
@@ -89,10 +88,10 @@ class LogAnalyzer:
                 # Issue warning if size/event or time/event values are not found
                 # For now, set the values to be zero if they are not found
                 if not size_event_found:
-                    warnings.warn(f'Warning: Size/event for {prepid} not found, setting to 0')
+                    print(f'WARNING: Size/event for {prepid} not found, setting to 0')
                     self.container[prepid]['size_event'] = 0
                 if not time_event_found:
-                    warnings.warn(f'Warning: Time/event for {prepid} not found, setting to 0')
+                    print(f'WARNING: Time/event for {prepid} not found, setting to 0')
                     self.container[prepid]['time_event'] = 0
     
     def _get_from_stderr(self):
@@ -153,13 +152,13 @@ class LogAnalyzer:
                 # Issue warning if x-sec or filter/matching efficiency values are not found
                 # For now, set the values to be zero if they are not found
                 if not xs_found:
-                    warnings.warn(f'Warning: Cross section for {prepid} not found, setting to 0')
+                    print(f'WARNING: Cross section for {prepid} not found, setting to 0')
                     self.container[prepid]['xsec'] = 0
                 if not filtereff_found:
-                    warnings.warn(f'Warning: Filter efficiency for {prepid} not found, setting to 0')
+                    print(f'WARNING: Filter efficiency for {prepid} not found, setting to 0')
                     self.container[prepid]['filtereff'] = 0
                 if not matcheff_found:
-                    warnings.warn(f'Warning: Matching efficiency for {prepid} not found, setting to 0')
+                    print(f'WARNING: Matching efficiency for {prepid} not found, setting to 0')
                     self.container[prepid]['matcheff'] = 0
 
     def dump_to_csv(self, csvfile):
