@@ -5,7 +5,7 @@ with open('requirements.txt', 'r') as f:
 
 setup(
     name='mcmtest',
-    version='0.0.2',
+    version='0.0.3',
     author='Alp Akpinar',
     author_email='aakpinar@bu.edu',
     description='Package for local McM test submissions using HTCondor.',
