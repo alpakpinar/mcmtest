@@ -82,11 +82,11 @@ class LogAnalyzer:
                 # use unneccessary memory.
                 for line in f:
                     if line.startswith('McM Size/event'):
-                        size_event = float( re.findall('\d+.\d+', line)[0] )
+                        size_event = float( re.findall('\d+[.]\d+', line)[0] )
                         self.container[prepid]['Size per event'] = size_event
                         size_event_found = True
                     if line.startswith('McM time_event'):
-                        time_event = float( re.findall('\d+.\d+', line)[0] )
+                        time_event = float( re.findall('\d+[.]\d+', line)[0] )
                         self.container[prepid]['Time per event'] = time_event
                         time_event_found = True
                 
@@ -121,21 +121,21 @@ class LogAnalyzer:
                 for line in f:
                     if line.startswith(search_pat_xs):
                         xsec = float(
-                                     re.findall('\d+.\d+e?[+-]?\d+', line)[0] 
+                                     re.findall('\d+[.]\d+e?[+-]?\d+', line)[0] 
                                     )    
                         self.container[prepid]['Cross section (pb)'] = xsec
                         xs_found = True
 
                     elif line.startswith(search_pat_filtereff):
                         filtereff = float( 
-                                          re.findall('\d+.\d+', line)[0] 
-                                         )    
+                                          re.findall('\d+[.]\d+', line)[0] 
+                                         )
                         self.container[prepid]['Filter efficiency'] = filtereff
                         filtereff_found = True
 
                     elif line.startswith(search_pat_matcheff):
                         matcheff = float( 
-                                         re.findall('\d+.\d+', line)[0] 
+                                         re.findall('\d+[.]\d+', line)[0] 
                                         )    
                         self.container[prepid]['Match efficiency'] = matcheff
                         matcheff_found = True
