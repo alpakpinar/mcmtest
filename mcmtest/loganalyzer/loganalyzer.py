@@ -113,7 +113,7 @@ class LogAnalyzer:
                 for line in f:
                     if line.startswith(search_pat_xs):
                         xsec = float(
-                                     re.findall('\d+.\d+e-?\d+', line)[0] 
+                                     re.findall('\d+.\d+e?[+-]?\d+', line)[0] 
                                     )    
                         self.container[prepid]['xsec'] = xsec
                         xs_found = True
