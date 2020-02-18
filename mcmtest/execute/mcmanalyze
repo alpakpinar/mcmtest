@@ -28,6 +28,13 @@ def dump_info(request_name):
     '''
     root_path = mcmtest_path(f'output/{request_name}')
     campaign_dirs = [pjoin(root_path, campaign_dir) for campaign_dir in os.listdir(root_path) if os.path.isdir(pjoin(root_path, campaign_dir) )]
+
+    # Set default parameters for time/event and size/event
+    # if they won't be found in the log files
+    defaults = {
+        'size_event' : 600,
+        'time_event' : 20
+    }
     # For each campaign in the request,
     # dump the values into csv files
     for campaign_dir in campaign_dirs:
@@ -35,7 +42,7 @@ def dump_info(request_name):
         print('*'*40)
         print(f'Working on campaign: {campaign_name}')
         print('*'*40)
-        analyzer = LogAnalyzer(campaign_dir)
+        analyzer = LogAnalyzer(campaign_dir, defaults=defaults)
         csvdir = mcmtest_path(f'output/{request_name}/{campaign_name}/csv')
         if not os.path.exists(csvdir):
             os.makedirs(csvdir)

@@ -22,7 +22,7 @@ class LogAnalyzer:
     Dumps the information into a new csv file together
     with prepIDs.
     '''
-    def __init__(self, directory):
+    def __init__(self, directory, defaults):
         '''
         Initialize the LogAnalyzer object. Sets the relevant 
         log files for the analyzer to read, according to 
@@ -32,8 +32,12 @@ class LogAnalyzer:
         PARAMETERS:
         ================
         directory : The output directory containing the out_*.txt and err_*.txt files.
+        defaults  : Dictionary containing the default values for size/event and time/event parameters. 
+                    If those parameters    are not found in the log files, they will be set to specified 
+                    default values.
         '''
         self.directory = mcmtest_path(directory)
+        self.defaults = defaults
 
         # Initialize and fill the container containing a mapping
         # of prepIDs to its stderr and stdout files. 
@@ -89,11 +93,15 @@ class LogAnalyzer:
                 # Issue warning if size/event or time/event values are not found
                 # For now, set the values to be zero if they are not found
                 if not size_event_found:
-                    print(f'WARNING: Size/event for {prepid} not found, setting to 0')
-                    self.container[prepid]['Size per event'] = 0
+                    if not self.defaults['size_event']:
+                        raise RuntimeError('Cannot find size/event value in logs and default set of parameters.')
+                    print(f'WARNING: Size/event for {prepid} not found, setting to {self.defaults["size_event"]}')
+                    self.container[prepid]['Size per event'] = self.defaults['size_event'] 
                 if not time_event_found:
-                    print(f'WARNING: Time/event for {prepid} not found, setting to 0')
-                    self.container[prepid]['Time per event'] = 0
+                    if not self.defaults['time_event']: 
+                        raise RuntimeError('Cannot find time/event value in logs and default set of parameters.')
+                    print(f'WARNING: Time/event for {prepid} not found, setting to {self.defaults["time_event"]}')
+                    self.container[prepid]['Time per event'] = self.defaults['time_event']
     
     def _get_from_stderr(self):
         '''Get x-section value for each request from logs.
@@ -135,14 +143,14 @@ class LogAnalyzer:
                 # Issue warning if x-sec or filter/matching efficiency values are not found
                 # For now, set the values to be zero if they are not found
                 if not xs_found:
-                    print(f'WARNING: Cross section for {prepid} not found, setting to 0')
-                    self.container[prepid]['Cross section (pb)'] = 0
+                    print(f'WARNING: Cross section for {prepid} not found, setting to 1')
+                    self.container[prepid]['Cross section (pb)'] = 1.0
                 if not filtereff_found:
-                    print(f'WARNING: Filter efficiency for {prepid} not found, setting to 0')
-                    self.container[prepid]['Filter efficiency'] = 0
+                    print(f'WARNING: Filter efficiency for {prepid} not found, setting to 1')
+                    self.container[prepid]['Filter efficiency'] = 1.0
                 if not matcheff_found:
-                    print(f'WARNING: Matching efficiency for {prepid} not found, setting to 0')
-                    self.container[prepid]['Match efficiency'] = 0
+                    print(f'WARNING: Matching efficiency for {prepid} not found, setting to 1')
+                    self.container[prepid]['Match efficiency'] = 1.0
 
     def dump_to_csv(self, csvfile):
         '''Gets all the values for all requests, and dumps the content to a csv file.''' 
