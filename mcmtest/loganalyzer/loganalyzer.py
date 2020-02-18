@@ -79,21 +79,21 @@ class LogAnalyzer:
                 for line in f:
                     if line.startswith('McM Size/event'):
                         size_event = float( re.findall('\d+.\d+', line)[0] )
-                        self.container[prepid]['size_event'] = size_event
+                        self.container[prepid]['Size per event'] = size_event
                         size_event_found = True
                     if line.startswith('McM time_event'):
                         time_event = float( re.findall('\d+.\d+', line)[0] )
-                        self.container[prepid]['time_event'] = time_event
+                        self.container[prepid]['Time per event'] = time_event
                         time_event_found = True
                 
                 # Issue warning if size/event or time/event values are not found
                 # For now, set the values to be zero if they are not found
                 if not size_event_found:
                     print(f'WARNING: Size/event for {prepid} not found, setting to 0')
-                    self.container[prepid]['size_event'] = 0
+                    self.container[prepid]['Size per event'] = 0
                 if not time_event_found:
                     print(f'WARNING: Time/event for {prepid} not found, setting to 0')
-                    self.container[prepid]['time_event'] = 0
+                    self.container[prepid]['Time per event'] = 0
     
     def _get_from_stderr(self):
         '''Get x-section value for each request from logs.
@@ -115,34 +115,34 @@ class LogAnalyzer:
                         xsec = float(
                                      re.findall('\d+.\d+e?[+-]?\d+', line)[0] 
                                     )    
-                        self.container[prepid]['xsec'] = xsec
+                        self.container[prepid]['Cross section (pb)'] = xsec
                         xs_found = True
 
                     elif line.startswith(search_pat_filtereff):
                         filtereff = float( 
                                           re.findall('\d+.\d+', line)[0] 
                                          )    
-                        self.container[prepid]['filtereff'] = filtereff
+                        self.container[prepid]['Filter efficiency'] = filtereff
                         filtereff_found = True
 
                     elif line.startswith(search_pat_matcheff):
                         matcheff = float( 
                                          re.findall('\d+.\d+', line)[0] 
                                         )    
-                        self.container[prepid]['matcheff'] = matcheff
+                        self.container[prepid]['Match efficiency'] = matcheff
                         matcheff_found = True
     
                 # Issue warning if x-sec or filter/matching efficiency values are not found
                 # For now, set the values to be zero if they are not found
                 if not xs_found:
                     print(f'WARNING: Cross section for {prepid} not found, setting to 0')
-                    self.container[prepid]['xsec'] = 0
+                    self.container[prepid]['Cross section (pb)'] = 0
                 if not filtereff_found:
                     print(f'WARNING: Filter efficiency for {prepid} not found, setting to 0')
-                    self.container[prepid]['filtereff'] = 0
+                    self.container[prepid]['Filter efficiency'] = 0
                 if not matcheff_found:
                     print(f'WARNING: Matching efficiency for {prepid} not found, setting to 0')
-                    self.container[prepid]['matcheff'] = 0
+                    self.container[prepid]['Match efficiency'] = 0
 
     def dump_to_csv(self, csvfile):
         '''Gets all the values for all requests, and dumps the content to a csv file.''' 
@@ -152,7 +152,7 @@ class LogAnalyzer:
 
         # Dump the contents of the main container into the csv file
         with open(csvfile, 'w+') as f:
-            fieldnames = ['prepid', 'xsec', 'filtereff', 'matcheff', 'time_event', 'size_event']
+            fieldnames = ['prepid', 'Cross section (pb)', 'Filter efficiency', 'Match efficiency', 'Time per event', 'Size per event']
             writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
             writer.writeheader()
             for data in self.container.values():
