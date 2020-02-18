@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import re
 import csv
 from mcmtest.lib.helpers import mcmtest_path
 
@@ -77,11 +78,11 @@ class LogAnalyzer:
                 # use unneccessary memory.
                 for line in f:
                     if line.startswith('McM Size/event'):
-                        size_event = float( line.split(':')[1] )
+                        size_event = float( re.findall('\d+.\d+', line)[0] )
                         self.container[prepid]['size_event'] = size_event
                         size_event_found = True
                     if line.startswith('McM time_event'):
-                        time_event = float( line.split(':')[1] )
+                        time_event = float( re.findall('\d+.\d+', line)[0] )
                         self.container[prepid]['time_event'] = time_event
                         time_event_found = True
                 
@@ -111,40 +112,22 @@ class LogAnalyzer:
                 search_pat_matcheff = 'Matching efficiency' 
                 for line in f:
                     if line.startswith(search_pat_xs):
-                        xsec = float( 
-                                        line.split('=')[1].split('+-')[0]
+                        xsec = float(
+                                     re.findall('\d+.\d+e-?\d+', line)[0] 
                                     )    
                         self.container[prepid]['xsec'] = xsec
                         xs_found = True
 
                     elif line.startswith(search_pat_filtereff):
-                        # Clean whitespace
-                        line = line.strip()
-                        # Further cleaning if needed
-                        if '[TO BE USED IN MCM]' in line:
-                            line = line.strip('[TO BE USED IN MCM]')
-                        # Determine the plus-minus symbol used
-                        plusminus = '+-'
-                        if '+/-' in line:
-                            plusminus = '+/-'
                         filtereff = float( 
-                                        line.split('=')[2].split(plusminus)[0]
+                                          re.findall('\d+.\d+', line)[0] 
                                          )    
                         self.container[prepid]['filtereff'] = filtereff
                         filtereff_found = True
 
                     elif line.startswith(search_pat_matcheff):
-                        # Clean whitespace
-                        line = line.strip()
-                        # Further cleaning if needed
-                        if '[TO BE USED IN MCM]' in line:
-                            line = line.strip('[TO BE USED IN MCM]')
-                        # Determine the plus-minus symbol used
-                        plusminus = '+-'
-                        if '+/-' in line:
-                            plusminus = '+/-'
                         matcheff = float( 
-                                        line.split('=')[1].split(plusminus)[0]
+                                         re.findall('\d+.\d+', line)[0] 
                                         )    
                         self.container[prepid]['matcheff'] = matcheff
                         matcheff_found = True
